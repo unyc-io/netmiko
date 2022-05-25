@@ -53,7 +53,7 @@ setup(
         "tenacity",
         "pyyaml>=5.3",
         "textfsm>=1.1.2",
-        "ntc-templates @ git+https://github.com/unyc-io/ntc-templates@v3.0.0-unyc.1",
+        "ntc-templates @ git+https://github.com/unyc-io/ntc-templates@v3.0.0-unyc.2",
         "pyserial",
     ],
     entry_points={
