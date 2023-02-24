@@ -20,6 +20,9 @@ class HuaweiBase(NoEnable, CiscoBaseConnection):
         # The _test_channel_read happens in special_login_handler()
         self.set_base_prompt()
         self.disable_paging(command="screen-length 0 temporary")
+        # Clear the read buffer
+        time.sleep(0.3 * self.global_delay_factor)
+        self.clear_buffer()
 
     def strip_ansi_escape_codes(self, string_buffer: str) -> str:
         """
