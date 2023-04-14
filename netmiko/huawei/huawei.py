@@ -120,7 +120,7 @@ class HuaweiSSH(HuaweiBase):
             r"security\srisks\sin\sthe\sconfiguration\sfile.*\?\s*\[[Yy]\/[nN]\]", data
         ):
             self.send_command("Y", expect_string=r"continue\?\s*\[[Yy]\/[nN]\]")
-            self.send_command("Y", expect_string=r"saved\ssuccessfully")
+            self.send_command("Y", expect_string=r"saved\ssuccessfully", read_timeout=60)
             self.read_until_pattern(pattern=r"[>\]]")
 
 
