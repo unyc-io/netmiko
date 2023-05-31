@@ -1,6 +1,7 @@
 from typing import Optional, Any, Union, Sequence, Iterator, TextIO
 import re
 import warnings
+import time
 
 from netmiko.no_enable import NoEnable
 from netmiko.base_connection import DELAY_FACTOR_DEPR_SIMPLE_MSG
@@ -159,7 +160,9 @@ class HuaweiSSH(HuaweiBase):
             r"security\srisks\sin\sthe\sconfiguration\sfile.*\?\s*\[[Yy]\/[nN]\]", data
         ):
             self.send_command("Y", expect_string=r"continue\?\s*\[[Yy]\/[nN]\]")
-            self.send_command("Y", expect_string=r"saved\ssuccessfully", read_timeout=60)
+            self.send_command(
+                "Y", expect_string=r"saved\ssuccessfully", read_timeout=60
+            )
             self.read_until_pattern(pattern=self.prompt_pattern)
 
 
