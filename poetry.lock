@@ -1664,17 +1664,24 @@ files = [
 
 [[package]]
 name = "ntc-templates"
-version = "5.1.0"
+version = "6.0.0"
 description = "TextFSM Templates for Network Devices, and Python wrapper for TextFSM's CliTable."
 optional = false
-python-versions = "<4.0,>=3.8"
-files = [
-    {file = "ntc_templates-5.1.0-py3-none-any.whl", hash = "sha256:8784bbf790a814789910c04148ee84726183228f173a118b80e0c7420290b4dd"},
-    {file = "ntc_templates-5.1.0.tar.gz", hash = "sha256:820583f35a8d7411c86b70635a6acd65ce357b8bc19e1f408ce836eac30a6371"},
-]
+python-versions = "^3.8"
+files = []
+develop = false
 
 [package.dependencies]
-textfsm = ">=1.1.0,<2.0.0"
+textfsm = "^1.1.0"
+
+[package.extras]
+test = []
+
+[package.source]
+type = "git"
+url = "https://github.com/unyc-io/ntc-templates.git"
+reference = "v7.2.0-unyc"
+resolved_reference = "ba49649b8e7b9f725971d67b1bf23bf3c3727b46"
 
 [[package]]
 name = "packaging"
@@ -3406,4 +3413,4 @@ test = ["big-O", "importlib-resources", "jaraco.functools", "jaraco.itertools", 
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8,<4.0"
-content-hash = "b2f6a481680f297df52f338c236787dbdb038bdf0b9e489891453503bc7efe50"
+content-hash = "ac5e02a9d44dc5a46b769233448477b87cae712801051737b6e5b699366668cc"
